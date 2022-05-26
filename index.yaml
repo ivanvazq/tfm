@@ -3,9 +3,9 @@ entries:
   router:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-26T17:24:58.944982505+02:00"
+    created: "2022-05-26T19:10:37.536801312+02:00"
     description: A Helm chart for Kubernetes
-    digest: 43b2ffffd23de5bb5729e431b5d5f9d3e71385d24ae394e09c5e281cef09f70d
+    digest: ceec1e40eb4af46452713b0a486ede4eb3466f3b22699ab45ff891f311aafde0
     name: router
     type: application
     urls:
@@ -14,12 +14,12 @@ entries:
   server:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-05-26T17:24:58.945360907+02:00"
+    created: "2022-05-26T19:10:37.537219617+02:00"
     description: A Helm chart for Kubernetes
-    digest: 26b4858dab96e1a604088e117445aa7276995ded747931ba8d7777e911ff664d
+    digest: 756c672580c370f2025371f4ed3e71b6c4026d71a6836364326c54544ca66bfd
     name: server
     type: application
     urls:
     - https://ivanvazq.github.io/tfm/server-0.1.0.tgz
     version: 0.1.0
-generated: "2022-05-26T17:24:58.944492568+02:00"
+generated: "2022-05-26T19:10:37.53619023+02:00"
