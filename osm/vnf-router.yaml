@@ -1,0 +1,17 @@
+vnfd:
+  description: Router de acceso
+  df:
+    - id: default-df
+  ext-cpd:
+    - id: vnfnet-ext
+      k8s-cluster-net: vnfnet
+  id: router_knf
+  k8s-cluster:
+    nets:
+      - id: vnfnet
+  kdu:
+    - helm-chart: tfm/router
+      name: router
+  mgmt-cp: vnfnet-ext
+  product-name: router_knf
+  version: '1.0'

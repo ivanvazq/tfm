@@ -1,0 +1,17 @@
+vnfd:
+  description: Servidor web
+  df:
+    - id: default-df
+  ext-cpd:
+    - id: vnfnet-ext
+      k8s-cluster-net: vnfnet
+  id: webserver_knf
+  k8s-cluster:
+    nets:
+      - id: vnfnet
+  kdu:
+    - helm-chart: tfm/server
+      name: server
+  mgmt-cp: vnfnet-ext
+  product-name: webserver_knf
+  version: '1.0'
