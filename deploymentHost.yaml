@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: host
+  labels:
+    app.kubernetes.io/name: host
+    app.kubernetes.io/version: "1"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: host
+      app.kubernetes.io/instance: host
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: host
+        app.kubernetes.io/instance: host
+      annotations:
+        k8s.v1.cni.cncf.io/networks: accessnet
+    spec:
+      containers:
+        - name: vclass
+          securityContext:
+            {}
+          image: "ivanvazq/vnf-tfm:1.0"
+          imagePullPolicy: IfNotPresent
+          command:
+            - "sh"
+            - "-c"
+            - "ip address add 10.255.0.5/24 dev net1"
+            - "ip route add 10.255.2.0/24 via 10.255.0.1"
+            - "tail -f /dev/null"
+          securityContext:
+            privileged: true
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            exec:
+              command:
+              - echo
+              - "alive"
+          resources:
+            {}
